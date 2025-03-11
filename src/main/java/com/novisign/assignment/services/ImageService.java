@@ -36,8 +36,6 @@ public class ImageService {
     public Pair<List<Image>, Set<Slideshow>> getImagesAndSlideshowsByKeywordsAndDuration(
             String[] keywords, int minDurationMillis, int maxDurationMillis) {
 
-        // TODO: handle the duality of duration between Image and SlideshowImage
-
         // select images that comply with the search params
         var selectedImages = imageRepository.findAll().stream().filter((a) ->
                 Arrays.stream(keywords).anyMatch((b) -> a.getUrl().contains(b)) &&

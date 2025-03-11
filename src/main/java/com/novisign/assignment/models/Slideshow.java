@@ -12,7 +12,6 @@ public class Slideshow {
     private Long id;
     private String name;
     @OneToMany(cascade = CascadeType.ALL)
-    // TODO: consider changing the field name to {slideshowImages}
     private List<SlideshowImage> images;
 
     public Long getId() {

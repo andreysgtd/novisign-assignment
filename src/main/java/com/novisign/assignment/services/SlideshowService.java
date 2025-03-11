@@ -55,9 +55,11 @@ public class SlideshowService {
             );
         }
 
+        // finding and sorting images referenced by the selected slideshow by create date in descending order
         Comparator<? super Image> comparator = (Comparator<Image>) (
                 a1, a2) -> a1.getCreateDate().compareTo(a2.getCreateDate()) * (-1);
         var imagesList = slideshow.get().getImages().stream().map(SlideshowImage::getImage).sorted(comparator).toList();
+
         return imagesList.toArray(new Image[0]);
     }
 
